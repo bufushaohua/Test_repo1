@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSON</title>
+
+    <script type="text/javascript">
+
+        // 编写一个JavaScript对象  ES6
+        var user = {
+            name: "曹远超",
+            age: 21,
+            sex: "男"
+        }
+
+        // 将js对象转换为json对象
+        var json = JSON.stringify(user);
+
+        console.log(json);
+
+        console.log("======")
+
+        let obj = JSON.parse(json);
+
+        console.log(obj);
+
+        console.log("======")
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

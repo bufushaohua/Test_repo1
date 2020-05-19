@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+    <!--1.注册DispatcherServlet，这个是SpringMVC的核心，请求分发器或者前端控制器-->
+    <servlet>
+        <servlet-name>springmvc</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <!--DispatcherServlet要绑定Spring的配置文件-->
+        <!--关联一个springmvc的配置文件:【servlet-name】-servlet.xml-->
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <!--classpath和classpath*区别：
+                classpath：只会到你的class路径中查找找文件。
+                classpath*：不仅包含class路径，还包括jar文件中（class路径）进行查找。-->
+            <!--classpath*的使用：
+                当项目中有多个classpath路径，并同时加载多个classpath路径下（此种情况多数不会遇到）的文件，
+                *就发挥了作用，如果不加*，则表示仅仅加载第一个classpath路径。-->
+            <param-value>classpath:springmvc-servlet.xml</param-value>
+        </init-param>
+        <!--启动级别-1-->
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <!--一般写/,因为如果写/*，会把.jsp文件会无限循环，形成.jsp.jsp-->
+    <!--/ 匹配所有的请求；（不包括.jsp）-->
+    <!--/* 匹配所有的请求；（包括.jsp）-->
+    <servlet-mapping>
+        <servlet-name>springmvc</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+
+</web-app>
