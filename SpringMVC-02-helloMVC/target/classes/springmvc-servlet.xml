@@ -9,8 +9,14 @@
     <!--添加处理器适配器-->
     <bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter" />
 
-    <!--添加视图解析器-->
-    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+    <!--添加视图解析器：DispatcherServlet给他的ModelAndView
+        1. 获取了ModelAndView的数据
+        2. 解析ModelAndView的视图名字
+        3. 拼接视图名字，找到对应的视图
+        4. 将数据渲染到视图上
+        作用：将逻辑视图转化为物理视图
+        -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" >
         <!--前缀-->
         <property name="prefix" value="/WEB-INF/jsp/" />
         <!--后缀-->
@@ -19,4 +25,5 @@
 
     <!--Handler-->
     <bean id="/hello" class="com.cyc.Controller.HelloController" />
+    <!--<bean id="/hello2.jsp" class="com.cyc.Controller.HelloController" />-->
 </beans>

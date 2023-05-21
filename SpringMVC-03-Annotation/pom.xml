@@ -11,5 +11,17 @@
 
     <artifactId>SpringMVC-03-Annotation</artifactId>
 
+    <!--导入Jar包
+        - commons-fileupload
+        - commons-io
+    -->
+    <dependencies>
+        <!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload -->
+        <dependency>
+            <groupId>commons-fileupload</groupId>
+            <artifactId>commons-fileupload</artifactId>
+            <version>1.4</version>
+        </dependency>
+    </dependencies>
 
 </project>
